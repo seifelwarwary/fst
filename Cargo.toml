@@ -1,0 +1,10 @@
+[package]
+name = "fst"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio={version = "1",features = ["full"]}
+axum = {version = "0.7",features = ["multipart"]}
+bytes = "1"
+mime_guess = "2"
