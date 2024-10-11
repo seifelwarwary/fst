@@ -36,7 +36,7 @@ pub async fn create_file(mut multipart: Multipart) -> Result<StatusCode, StatusC
     Ok(StatusCode::OK)
 }
 
-pub async fn read_file(file_name:String) -> impl axum::response::IntoResponse {
+pub async fn read_file(Path(file_name): Path<String>) -> impl axum::response::IntoResponse {
     println!("Reading file: {}", file_name);
     let file_path = format!("./uploads/{}", file_name);
     let mut file = File::open(file_path.clone())
